@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Website</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <form id="loginForm" action="/index.html">
+            Username: <input type="text" name="uname" id="uname" />
+            Password: <input type="password" name="pwd" id="pwd" />
+            <input type="button" onclick="submitLogin" value="Submit" />
+        </form>
+    </body>
+
+    <script>
+        function submitLogin() {
+            let form = document.getElementById("loginForm");
+
+            let pwd = document.getElementById("pwd");
+            let uname = document.getElementById("uname");
+
+            fetch(window.location.origin + "/login", {
+                method: "GET",
+                body: JSON.stringify({
+                    Username: uname,
+                    Password: pwd
+                }),
+                headers: {
+                    "Content-type": "text/plain; charset=UTF-8"
+                }
+            });
+
+            form.submit();
+        }
+    </script>
+</html>

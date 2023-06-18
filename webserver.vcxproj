@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{648ce39c-d961-401b-b2d3-3635ad39379a}</ProjectGuid>
+    <RootNamespace>webserver</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\Kodovi\C++\webserver\deps\hiredis;D:\Kodovi\C++\webserver\deps;$(SolutionDir);$(IncludePath)</IncludePath>
+    <LibraryPath>$(OutDir);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>D:\Kodovi\C++\webserver\deps\hiredis;D:\Kodovi\C++\webserver\deps;$(SolutionDir);$(IncludePath)</IncludePath>
+    <LibraryPath>$(OutDir);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Ws2_32.lib;libcrypto.lib;libssl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Ws2_32.lib;libcrypto.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="apis\guildapi.cpp" />
+    <ClCompile Include="apis\postapi.cpp" />
+    <ClCompile Include="apis\userapi.cpp" />
+    <ClCompile Include="classes\token\token.cpp" />
+    <ClCompile Include="db\redis.cpp" />
+    <ClCompile Include="db\sql.cpp" />
+    <ClCompile Include="deps\hiredis\alloc.c" />
+    <ClCompile Include="deps\hiredis\async.c" />
+    <ClCompile Include="deps\hiredis\dict.c" />
+    <ClCompile Include="deps\hiredis\fuzzing\format_command_fuzzer.c" />
+    <ClCompile Include="deps\hiredis\hiredis.c" />
+    <ClCompile Include="deps\hiredis\net.c" />
+    <ClCompile Include="deps\hiredis\read.c" />
+    <ClCompile Include="deps\hiredis\sds.c" />
+    <ClCompile Include="deps\hiredis\sockcompat.c" />
+    <ClCompile Include="deps\openssl\applink.c" />
+    <ClCompile Include="deps\sqlite3\shell.c" />
+    <ClCompile Include="deps\sqlite3\sqlite3.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="classes\post\post.cpp" />
+    <ClCompile Include="server\network.cpp" />
+    <ClCompile Include="server\server.cpp" />
+    <ClCompile Include="classes\user\user.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="apis\apis.h" />
+    <ClInclude Include="apis\guildapi.h" />
+    <ClInclude Include="apis\postapi.h" />
+    <ClInclude Include="apis\userapi.h" />
+    <ClInclude Include="classes\token\token.h" />
+    <ClInclude Include="db\redis.h" />
+    <ClInclude Include="db\sql.h" />
+    <ClInclude Include="deps\hiredis\adapters\ae.h" />
+    <ClInclude Include="deps\hiredis\adapters\glib.h" />
+    <ClInclude Include="deps\hiredis\adapters\ivykis.h" />
+    <ClInclude Include="deps\hiredis\adapters\libev.h" />
+    <ClInclude Include="deps\hiredis\adapters\libevent.h" />
+    <ClInclude Include="deps\hiredis\adapters\libhv.h" />
+    <ClInclude Include="deps\hiredis\adapters\libuv.h" />
+    <ClInclude Include="deps\hiredis\adapters\macosx.h" />
+    <ClInclude Include="deps\hiredis\adapters\poll.h" />
+    <ClInclude Include="deps\hiredis\adapters\qt.h" />
+    <ClInclude Include="deps\hiredis\alloc.h" />
+    <ClInclude Include="deps\hiredis\async.h" />
+    <ClInclude Include="deps\hiredis\async_private.h" />
+    <ClInclude Include="deps\hiredis\dict.h" />
+    <ClInclude Include="deps\hiredis\fmacros.h" />
+    <ClInclude Include="deps\hiredis\hiredis.h" />
+    <ClInclude Include="deps\hiredis\net.h" />
+    <ClInclude Include="deps\hiredis\read.h" />
+    <ClInclude Include="deps\hiredis\sds.h" />
+    <ClInclude Include="deps\hiredis\sdsalloc.h" />
+    <ClInclude Include="deps\hiredis\sockcompat.h" />
+    <ClInclude Include="deps\hiredis\win32.h" />
+    <ClInclude Include="deps\openssl\aes.h" />
+    <ClInclude Include="deps\openssl\asn1.h" />
+    <ClInclude Include="deps\openssl\asn1err.h" />
+    <ClInclude Include="deps\openssl\asn1t.h" />
+    <ClInclude Include="deps\openssl\asn1_mac.h" />
+    <ClInclude Include="deps\openssl\async.h" />
+    <ClInclude Include="deps\openssl\asyncerr.h" />
+    <ClInclude Include="deps\openssl\bio.h" />
+    <ClInclude Include="deps\openssl\bioerr.h" />
+    <ClInclude Include="deps\openssl\blowfish.h" />
+    <ClInclude Include="deps\openssl\bn.h" />
+    <ClInclude Include="deps\openssl\bnerr.h" />
+    <ClInclude Include="deps\openssl\buffer.h" />
+    <ClInclude Include="deps\openssl\buffererr.h" />
+    <ClInclude Include="deps\openssl\camellia.h" />
+    <ClInclude Include="deps\openssl\cast.h" />
+    <ClInclude Include="deps\openssl\cmac.h" />
+    <ClInclude Include="deps\openssl\cmp.h" />
+    <ClInclude Include="deps\openssl\cmperr.h" />
+    <ClInclude Include="deps\openssl\cmp_util.h" />
+    <ClInclude Include="deps\openssl\cms.h" />
+    <ClInclude Include="deps\openssl\cmserr.h" />
+    <ClInclude Include="deps\openssl\comp.h" />
+    <ClInclude Include="deps\openssl\comperr.h" />
+    <ClInclude Include="deps\openssl\conf.h" />
+    <ClInclude Include="deps\openssl\conferr.h" />
+    <ClInclude Include="deps\openssl\configuration.h" />
+    <ClInclude Include="deps\openssl\conftypes.h" />
+    <ClInclude Include="deps\openssl\conf_api.h" />
+    <ClInclude Include="deps\openssl\core.h" />
+    <ClInclude Include="deps\openssl\core_dispatch.h" />
+    <ClInclude Include="deps\openssl\core_names.h" />
+    <ClInclude Include="deps\openssl\core_object.h" />
+    <ClInclude Include="deps\openssl\crmf.h" />
+    <ClInclude Include="deps\openssl\crmferr.h" />
+    <ClInclude Include="deps\openssl\crypto.h" />
+    <ClInclude Include="deps\openssl\cryptoerr.h" />
+    <ClInclude Include="deps\openssl\cryptoerr_legacy.h" />
+    <ClInclude Include="deps\openssl\ct.h" />
+    <ClInclude Include="deps\openssl\cterr.h" />
+    <ClInclude Include="deps\openssl\decoder.h" />
+    <ClInclude Include="deps\openssl\decodererr.h" />
+    <ClInclude Include="deps\openssl\des.h" />
+    <ClInclude Include="deps\openssl\dh.h" />
+    <ClInclude Include="deps\openssl\dherr.h" />
+    <ClInclude Include="deps\openssl\dsa.h" />
+    <ClInclude Include="deps\openssl\dsaerr.h" />
+    <ClInclude Include="deps\openssl\dtls1.h" />
+    <ClInclude Include="deps\openssl\ebcdic.h" />
+    <ClInclude Include="deps\openssl\ec.h" />
+    <ClInclude Include="deps\openssl\ecdh.h" />
+    <ClInclude Include="deps\openssl\ecdsa.h" />
+    <ClInclude Include="deps\openssl\ecerr.h" />
+    <ClInclude Include="deps\openssl\encoder.h" />
+    <ClInclude Include="deps\openssl\encodererr.h" />
+    <ClInclude Include="deps\openssl\engine.h" />
+    <ClInclude Include="deps\openssl\engineerr.h" />
+    <ClInclude Include="deps\openssl\err.h" />
+    <ClInclude Include="deps\openssl\ess.h" />
+    <ClInclude Include="deps\openssl\esserr.h" />
+    <ClInclude Include="deps\openssl\evp.h" />
+    <ClInclude Include="deps\openssl\evperr.h" />
+    <ClInclude Include="deps\openssl\e_os2.h" />
+    <ClInclude Include="deps\openssl\fipskey.h" />
+    <ClInclude Include="deps\openssl\fips_names.h" />
+    <ClInclude Include="deps\openssl\hmac.h" />
+    <ClInclude Include="deps\openssl\hpke.h" />
+    <ClInclude Include="deps\openssl\http.h" />
+    <ClInclude Include="deps\openssl\httperr.h" />
+    <ClInclude Include="deps\openssl\idea.h" />
+    <ClInclude Include="deps\openssl\kdf.h" />
+    <ClInclude Include="deps\openssl\kdferr.h" />
+    <ClInclude Include="deps\openssl\lhash.h" />
+    <ClInclude Include="deps\openssl\macros.h" />
+    <ClInclude Include="deps\openssl\md2.h" />
+    <ClInclude Include="deps\openssl\md4.h" />
+    <ClInclude Include="deps\openssl\md5.h" />
+    <ClInclude Include="deps\openssl\mdc2.h" />
+    <ClInclude Include="deps\openssl\modes.h" />
+    <ClInclude Include="deps\openssl\objects.h" />
+    <ClInclude Include="deps\openssl\objectserr.h" />
+    <ClInclude Include="deps\openssl\obj_mac.h" />
+    <ClInclude Include="deps\openssl\ocsp.h" />
+    <ClInclude Include="deps\openssl\ocsperr.h" />
+    <ClInclude Include="deps\openssl\opensslconf.h" />
+    <ClInclude Include="deps\openssl\opensslv.h" />
+    <ClInclude Include="deps\openssl\ossl_typ.h" />
+    <ClInclude Include="deps\openssl\params.h" />
+    <ClInclude Include="deps\openssl\param_build.h" />
+    <ClInclude Include="deps\openssl\pem.h" />
+    <ClInclude Include="deps\openssl\pem2.h" />
+    <ClInclude Include="deps\openssl\pemerr.h" />
+    <ClInclude Include="deps\openssl\pkcs12.h" />
+    <ClInclude Include="deps\openssl\pkcs12err.h" />
+    <ClInclude Include="deps\openssl\pkcs7.h" />
+    <ClInclude Include="deps\openssl\pkcs7err.h" />
+    <ClInclude Include="deps\openssl\proverr.h" />
+    <ClInclude Include="deps\openssl\provider.h" />
+    <ClInclude Include="deps\openssl\prov_ssl.h" />
+    <ClInclude Include="deps\openssl\quic.h" />
+    <ClInclude Include="deps\openssl\rand.h" />
+    <ClInclude Include="deps\openssl\randerr.h" />
+    <ClInclude Include="deps\openssl\rc2.h" />
+    <ClInclude Include="deps\openssl\rc4.h" />
+    <ClInclude Include="deps\openssl\rc5.h" />
+    <ClInclude Include="deps\openssl\ripemd.h" />
+    <ClInclude Include="deps\openssl\rsa.h" />
+    <ClInclude Include="deps\openssl\rsaerr.h" />
+    <ClInclude Include="deps\openssl\safestack.h" />
+    <ClInclude Include="deps\openssl\seed.h" />
+    <ClInclude Include="deps\openssl\self_test.h" />
+    <ClInclude Include="deps\openssl\sha.h" />
+    <ClInclude Include="deps\openssl\srp.h" />
+    <ClInclude Include="deps\openssl\srtp.h" />
+    <ClInclude Include="deps\openssl\ssl.h" />
+    <ClInclude Include="deps\openssl\ssl2.h" />
+    <ClInclude Include="deps\openssl\ssl3.h" />
+    <ClInclude Include="deps\openssl\sslerr.h" />
+    <ClInclude Include="deps\openssl\sslerr_legacy.h" />
+    <ClInclude Include="deps\openssl\stack.h" />
+    <ClInclude Include="deps\openssl\store.h" />
+    <ClInclude Include="deps\openssl\storeerr.h" />
+    <ClInclude Include="deps\openssl\symhacks.h" />
+    <ClInclude Include="deps\openssl\thread.h" />
+    <ClInclude Include="deps\openssl\tls1.h" />
+    <ClInclude Include="deps\openssl\trace.h" />
+    <ClInclude Include="deps\openssl\ts.h" />
+    <ClInclude Include="deps\openssl\tserr.h" />
+    <ClInclude Include="deps\openssl\txt_db.h" />
+    <ClInclude Include="deps\openssl\types.h" />
+    <ClInclude Include="deps\openssl\ui.h" />
+    <ClInclude Include="deps\openssl\uierr.h" />
+    <ClInclude Include="deps\openssl\whrlpool.h" />
+    <ClInclude Include="deps\openssl\x509.h" />
+    <ClInclude Include="deps\openssl\x509err.h" />
+    <ClInclude Include="deps\openssl\x509v3.h" />
+    <ClInclude Include="deps\openssl\x509v3err.h" />
+    <ClInclude Include="deps\openssl\x509_vfy.h" />
+    <ClInclude Include="deps\openssl\__DECC_INCLUDE_EPILOGUE.H" />
+    <ClInclude Include="deps\openssl\__DECC_INCLUDE_PROLOGUE.H" />
+    <ClInclude Include="deps\sqlite3\sqlite3.h" />
+    <ClInclude Include="deps\sqlite3\sqlite3ext.h" />
+    <ClInclude Include="classes\post\post.h" />
+    <ClInclude Include="server\network.h" />
+    <ClInclude Include="server\server.h" />
+    <ClInclude Include="classes\user\user.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="deps\hiredis\.gitignore" />
+    <None Include="deps\hiredis\.travis.yml" />
+    <None Include="deps\hiredis\appveyor.yml" />
+    <None Include="deps\hiredis\CHANGELOG.md" />
+    <None Include="deps\hiredis\COPYING" />
+    <None Include="deps\hiredis\hiredis-config.cmake.in" />
+    <None Include="deps\hiredis\hiredis.pc.in" />
+    <None Include="deps\hiredis\hiredis.targets" />
+    <None Include="deps\hiredis\Makefile" />
+    <None Include="deps\hiredis\README.md" />
+    <None Include="website\index.html">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="website\login.html" />
+    <None Include="website\register.html" />
+    <None Include="website\style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="deps\hiredis\CMakeLists.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

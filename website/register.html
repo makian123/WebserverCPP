@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Website</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <form id="registerForm" onsubmit="return false;">
+            Username: <input type="text" name="uname" id="uname" />
+            Password: <input type="password" name="pwd" id="pwd" />
+            <button onclick="submitRegister();" value="Submit">Submit</button>
+        </form>
+    </body>
+
+    <script>
+        function submitRegister() {
+            let form = document.getElementById("registerForm");
+
+            let pwd = document.getElementById("pwd").value;
+            let uname = document.getElementById("uname").value;
+
+            fetch(window.location.origin + "/register", {
+                method: "POST",
+                headers: {
+                    "Content-type": "text/plain; charset=UTF-8",
+                    "Username": uname,
+                    "Password": pwd
+                }
+            }).then((response) => response.json())
+                .then((json) => console.log(json));
+
+            form.submit();
+        }
+    </script>
+</html>
