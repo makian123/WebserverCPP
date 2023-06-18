@@ -1,3 +1,5 @@
+#pragma warning(disable:4146)
+
 #include "server/server.h"
 #include <iostream>
 #include <classes/user/user.h>

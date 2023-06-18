@@ -75,13 +75,13 @@
     <ClCompile Include="classes\token\token.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="deps\openssl\applink.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="apis\postapi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="apis\guildapi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deps\openssl\applink.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -180,6 +180,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="classes\token\token.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="apis\postapi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="apis\guildapi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="apis\apis.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="deps\openssl\__DECC_INCLUDE_EPILOGUE.H">
@@ -600,15 +609,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="deps\openssl\x509v3err.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="apis\postapi.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="apis\guildapi.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="apis\apis.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
